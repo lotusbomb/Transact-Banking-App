@@ -23,7 +23,7 @@ const config = {
         fill: {
           1: "rgba(255, 255, 255, 0.10)",
         },
-        bankGradient: "#FFA500",
+        bankGradient: "#EE1C00",
         indigo: {
           500: "#FF5000",
           700: "#FF7B00",
@@ -70,7 +70,7 @@ const config = {
         },
       },
       backgroundImage: {
-        "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
+        "bank-gradient": "linear-gradient(90deg, #FF2D11 0%, #FF6E5B 100%)",
         "gradient-mesh": "url('/icons/gradient-mesh.svg')",
         "bank-green-gradient":
           "linear-gradient(90deg, #01797A 0%, #489399 100%)",
@@ -85,7 +85,7 @@ const config = {
       },
       fontFamily: {
         inter: "var(--font-inter)",
-        "ibm-plex-serif": "var(--font-ibm-plex-serif)",
+        "noto-serif": "var(--font-noto-serif)",
       },
       keyframes: {
         "accordion-down": {
