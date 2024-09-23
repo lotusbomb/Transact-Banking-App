@@ -13,6 +13,7 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
+import PlaidLink from './PlaidLink';
 // import SignUp from '@/app/(auth)/sign-up/page';
 
 
@@ -41,6 +42,17 @@ const AuthForm = ({type}: {type: string}) => {
     setIsLoading(true)
     try{
         //sign up with appwrite & create plaid token
+          const userData  = {
+            firstName: data.firstName!,
+            lastName: data.lastName!,
+            address1: data.address1!,
+            city: data.city!,
+            postalCode: data.postalCode!,
+            dateOfBirth: data.dateOfBirth!,
+            ssn:data.ssn!,
+            email: data.email,
+            password: data.password,
+          }
         if( type === 'sign-up'){
             const newUser = await signUp(data)
 
@@ -87,7 +99,7 @@ const AuthForm = ({type}: {type: string}) => {
 
       {user ? (
         <div className="flex flex-col gap-4">
-            {/* PlaidLink */}
+          <PlaidLink user={user} variant='primary' />
         </div>
       ) : (
         <>
@@ -145,14 +157,14 @@ const AuthForm = ({type}: {type: string}) => {
                     control={form.control}
                     name="dateOfBirth"
                     label="Date of Birth"
-                    placeholder="dd-mm-yyyy"
+                    placeholder="YYYY-MM-DD"
                   />
 
                   <CustomInput
                     control={form.control}
                     name="ssn"
                     label="SSN"
-                    placeholder="Example:1234"
+                    placeholder="Example:XXX-XX-XXXX"
                   />
                 </>
               )}
