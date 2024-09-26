@@ -1,15 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { FormControl, FormField, FormLabel, FormMessage} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { StringifyOptions } from 'query-string';
 import { Control, FieldPath } from 'react-hook-form';
 import {z} from 'zod'
 import { authFormSchema } from '@/lib/utils';
@@ -23,7 +15,7 @@ interface CustomInput {
   placeholder: string;
 }
 
-const CustomInput = ({control, name, placeholder, label, type}: CustomInput) => {
+const CustomInput = ({control, name, placeholder, label,}: CustomInput) => {
   return (
     <FormField
       control={control}
