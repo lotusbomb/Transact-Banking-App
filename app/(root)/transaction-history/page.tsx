@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import HeaderBox from "@/components/HeaderBox";
 import { Pagination } from "@/components/Pagination";
 import TransactionsTable from "@/components/TransactionsTable";
@@ -6,7 +8,9 @@ import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { formatAmount } from "@/lib/utils";
 import React from "react";
 
-const TransactionHistory = async ({searchParams: { id, page }}: SearchParamProps) => {
+const TransactionHistory = async ({
+  searchParams: { id, page },
+}: SearchParamProps) => {
   const currentPage = Number(page as string) || 1;
   const loggedIn = await getLoggedInUser();
   const accounts = await getAccounts({

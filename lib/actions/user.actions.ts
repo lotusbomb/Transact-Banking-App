@@ -249,7 +249,6 @@ export const exchangePublicToken = async ({
     });
   } catch (error) {
     console.error("An error occurred while creating exchanging token:", error);
-    console.error("Error as string:", error.toString()); 
     console.error('Full error details:', JSON.stringify(error, Object.getOwnPropertyNames(error)))
   }
 };
